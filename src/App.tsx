@@ -9,6 +9,8 @@ import NotFound from "./pages/NotFound";
 import Clubs from "./pages/Clubs";
 import ClubPage from "./pages/ClubPage";
 import CreateClub from "./pages/CreateClub";
+import Auth from "./pages/Auth";
+import Profile from "./pages/Profile";
 import Navbar from "./components/layout/Navbar";
 import Footer from "./components/layout/Footer";
 
@@ -27,6 +29,8 @@ const App = () => (
             <Route path="/clubs" element={<Clubs />} />
             <Route path="/clubs/:slug" element={<ClubPage />} />
             <Route path="/clubs/create" element={<CreateClub />} />
+            <Route path="/auth" element={<Auth />} />
+            <Route path="/profile" element={<Profile />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>

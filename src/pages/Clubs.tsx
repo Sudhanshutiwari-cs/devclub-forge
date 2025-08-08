@@ -1,12 +1,24 @@
 import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
-import { clubs } from "@/data/clubs";
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { useQuery } from "@tanstack/react-query";
+import { supabase } from "@/integrations/supabase/client";
 
 const Clubs = () => {
   const canonical = typeof window !== 'undefined' ? `${window.location.origin}/clubs` : '/clubs';
+  const { data } = useQuery({
+    queryKey: ["clubs"],
+    queryFn: async () => {
+      const { data, error } = await supabase
+        .from("clubs")
+        .select("id, name, slug, description, location, tags")
+        .order("name");
+      if (error) throw error;
+      return data ?? [];
+    },
+  });
 
   return (
     <main className="container mx-auto py-12">
@@ -22,7 +34,7 @@ const Clubs = () => {
       </header>
 
       <section className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-        {clubs.map((club) => (
+        {data?.map((club) => (
           <Card key={club.id} className="transition-transform hover:-translate-y-0.5">
             <CardHeader>
               <CardTitle className="text-xl">{club.name}</CardTitle>
@@ -30,7 +42,7 @@ const Clubs = () => {
             <CardContent>
               <p className="text-sm text-muted-foreground mb-3">{club.description}</p>
               <div className="flex flex-wrap gap-2">
-                {club.tags.map((t) => (
+                {club.tags?.map((t: string) => (
                   <Badge key={t} variant="secondary">{t}</Badge>
                 ))}
               </div>
