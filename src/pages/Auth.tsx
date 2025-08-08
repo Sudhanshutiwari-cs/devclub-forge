@@ -84,7 +84,7 @@ const Auth = () => {
         {mode === "signin" ? (
           <Button onClick={handleSignIn} disabled={loading}>{loading ? "Signing in..." : "Sign In"}</Button>
         ) : (
-          <Button onClick={handleSignUp} disabled={loading} variant="hero">{loading ? "Creating..." : "Create Account"}</Button>
+          <Button onClick={handleSignUp} disabled={loading}>{loading ? "Creating..." : "Create Account"}</Button>
         )}
         <Button variant="outline" onClick={() => setMode(mode === "signin" ? "signup" : "signin")}
           aria-label={mode === "signin" ? "Switch to sign up" : "Switch to sign in"}
