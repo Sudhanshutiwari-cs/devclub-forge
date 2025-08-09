@@ -28,7 +28,7 @@ const CreateClub = () => {
   return (
     <main className="container mx-auto py-12">
       <Helmet>
-        <title>Create a Club — DevClub Forge</title>
+        <title>Create a Club — Ideakode Developers on Campus</title>
         <meta name="description" content="Create your developer club page. After connecting Supabase, your club will be publicly accessible." />
         <link rel="canonical" href={canonical} />
       </Helmet>

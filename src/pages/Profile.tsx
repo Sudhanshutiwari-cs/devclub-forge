@@ -61,7 +61,7 @@ const Profile = () => {
   return (
     <main className="container mx-auto max-w-2xl py-12">
       <Helmet>
-        <title>My Profile — DevClub Forge</title>
+        <title>My Profile — Ideakode Developers on Campus</title>
         <meta name="description" content="Manage your DevClub Forge profile." />
         <link rel="canonical" href={`${window.location.origin}/profile`} />
       </Helmet>

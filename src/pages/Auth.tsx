@@ -50,7 +50,7 @@ const Auth = () => {
   return (
     <main className="container mx-auto max-w-md py-12">
       <Helmet>
-        <title>{mode === "signin" ? "Sign In" : "Create Account"} — DevClub Forge</title>
+        <title>{mode === "signin" ? "Sign In" : "Create Account"} — Ideakode Developers on Campus</title>
         <meta name="description" content="Sign in or create your account to join developer clubs and manage your profile." />
         <link rel="canonical" href={`${window.location.origin}/auth`} />
       </Helmet>

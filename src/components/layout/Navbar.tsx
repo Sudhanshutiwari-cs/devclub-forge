@@ -20,7 +20,7 @@ const Navbar = () => {
     <header className="sticky top-0 z-40 w-full border-b glass-card backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <nav className="container mx-auto flex h-16 items-center justify-between">
         <Link to="/" className="font-bold tracking-tight text-xl gradient-text hover:scale-105 transition-transform">
-          DevClub <span className="text-foreground">Forge</span>
+          IdeaKode <span className="text-foreground">Developers on Campus</span>
         </Link>
         <div className="flex items-center gap-2">
           <NavLink to="/clubs" className={({ isActive }) => isActive ? "opacity-100" : "opacity-80 hover:opacity-100"}>

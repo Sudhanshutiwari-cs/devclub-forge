@@ -33,7 +33,7 @@ const Clubs = () => {
   return (
     <main className="min-h-screen">
       <Helmet>
-        <title>Clubs Directory — DevClub Forge</title>
+        <title>Clubs Directory — Ideakode Developers on Campus</title>
         <meta name="description" content="Browse developer clubs near you. Find communities focused on web, mobile, AI, cloud, and more." />
         <link rel="canonical" href={canonical} />
       </Helmet>
